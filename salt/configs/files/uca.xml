@@ -1,0 +1,140 @@
+<?xml encoding="UTF-8" version="1.0"?>
+<actions>
+<action>
+	<icon>filefind</icon>
+	<name>Find in Folder</name>
+	<unique-id>1439623214102333-1</unique-id>
+	<command>catfish --path=%f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<unique-id>1439623214102354-2</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<unique-id>1440021393189849-1</unique-id>
+	<command>exo-open --working-directory %d --launch TerminalEmulator</command>
+	<description></description>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Root Terminal Here</name>
+	<unique-id>1439623214102384-4</unique-id>
+	<command>pkexec exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Root Terminal Here</name>
+	<unique-id>1439623214102397-5</unique-id>
+	<command>pkexec exo-open --working-directory %d --launch TerminalEmulator</command>
+	<description></description>
+	<patterns>*</patterns>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>system-file-manager</icon>
+	<name>Explore as Root</name>
+	<unique-id>1439623214102410-6</unique-id>
+	<command>pkexec exo-open --working-directory %f --launch FileManager</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>applications-other</icon>
+	<name>Open as Root</name>
+	<unique-id>1439623214102426-7</unique-id>
+	<command>pkexec exo-open %f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>accessories-text-editor</icon>
+	<name>Edit</name>
+	<unique-id>1439623214102440-8</unique-id>
+	<command>geany %F</command>
+	<description></description>
+	<patterns>*</patterns>
+	<other-files/>
+	<text-files/>
+</action>
+<action>
+	<icon>accessories-text-editor</icon>
+	<name>Edit as Root</name>
+	<unique-id>1439623214102452-9</unique-id>
+	<command>pkexec geany %F</command>
+	<description></description>
+	<patterns>*</patterns>
+	<text-files/>
+</action>
+<action>
+	<icon>media-playback-start</icon>
+	<name>Play</name>
+	<unique-id>1439623214102465-10</unique-id>
+	<command>vlc %F</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>edit-copy</icon>
+	<name>Copy Contents</name>
+	<unique-id>1439623214102477-11</unique-id>
+	<command>cat %f | xsel -i -b</command>
+	<description></description>
+	<patterns>*</patterns>
+	<text-files/>
+</action>
+<action>
+	<icon>meld</icon>
+	<name>Compare with Path on Clipboard</name>
+	<unique-id>1439623214102496-12</unique-id>
+	<command>meld &quot;$(xsel -o -b)&quot; %f</command>
+	<description>Compare with previously selected file or folder</description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>meld</icon>
+	<name>Compare</name>
+	<unique-id>1439623214102512-13</unique-id>
+	<command>meld %F</command>
+	<description>Compare files or folders</description>
+	<patterns>*</patterns>
+	<directories/>
+	<other-files/>
+	<text-files/>
+</action>
+</actions>

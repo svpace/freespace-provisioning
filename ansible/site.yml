@@ -1,0 +1,6 @@
+---
+- hosts: workstations
+  tasks:
+  - apt: 
+      pkg: geany-plugin-spellcheck
+      state: present
