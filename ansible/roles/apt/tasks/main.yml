@@ -1,0 +1,4 @@
+---
+- apt:
+    name: python-software-properties
+    state: latest

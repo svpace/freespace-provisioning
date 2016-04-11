@@ -1,6 +1,8 @@
 ---
-- hosts: workstations
-  tasks:
-  - apt: 
-      pkg: geany-plugin-spellcheck
-      state: present
+- hosts: localhost
+  connection: local
+  become: true
+  roles:
+    - apt
+    - google-chrome
+    - nodejs

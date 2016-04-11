@@ -1,6 +1,7 @@
 base:
   '*':
     - apt.ppa
+    - configs.android-studio
     - configs.disable-password
     - configs.eclipse
     - configs.git
@@ -10,8 +11,9 @@ base:
     - configs.profile
     - configs.storage
     - configs.thunar
+    - docker
     - google-chrome
+    - nodejs
     - oracle-java8
     - oracle-virtualbox
     - refind
-    - vagrant

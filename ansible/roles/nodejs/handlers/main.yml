@@ -1,0 +1,10 @@
+- name: update npm completion
+  command: npm completion
+  register: result
+  notify: save npm completion
+
+- name: save npm completion
+  copy:
+    content: result
+    dest: /etc/bash_completion.d/npm
+    
