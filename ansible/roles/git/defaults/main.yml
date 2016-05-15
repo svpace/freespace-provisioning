@@ -1,0 +1,6 @@
+git_config:
+  user:
+    name: svpace 
+    email: svpace@gmail.com
+  push:
+    default: simple

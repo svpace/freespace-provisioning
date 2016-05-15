@@ -1,0 +1,11 @@
+- name: Ensure polkit policies
+  template:
+    dest: /usr/share/polkit-1/actions/{{ item.id }}.policy
+    src: polkit.policy.j2
+  with_items:
+    - id: org.xfce.exo-open
+      name: exo-open
+      path: /usr/bin/exo-open
+    - id: org.geany
+      name: Geany
+      path: /usr/bin/geany

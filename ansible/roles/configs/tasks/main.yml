@@ -1,0 +1,10 @@
+- include: "{{ item }}.yml"
+  with_items:
+    - disable_password
+    - eclipse
+    - git
+    - gtkrc
+    - packages
+    - polkit-policies
+    - profile
+    - thunar

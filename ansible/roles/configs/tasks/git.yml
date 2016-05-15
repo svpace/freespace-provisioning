@@ -1,0 +1,12 @@
+- name: Ensure git is latest
+  apt:
+    name: git
+    state: latest
+
+- name: Ensure git config is set
+  template:
+    src: gitconfig.j2
+    dest: "{{ my_home }}/.gitconfig"
+    owner: svpace
+    group: svpace
+  when: git_config

@@ -1,26 +1,14 @@
----
 - apt_key:
     url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
-    state: present
 - apt_repository:
-    repo: deb https://deb.nodesource.com/node_5.x {{ ansible_distribution_release }} main
-    state: present
-
-- apt:
-    name: nodejs
-    state: latest
-    notify:
-      - update npm completion
-
-- command: npm completion > /etc/bash_completion.d/npm
-  args:
-    creates: /etc/bash_completion.d/npm
-
-#/home/svpace/.npmrc:
-#  file.managed:
-#    - text: prefix=~/.local#
-#
-#node_path:
-#  file.append:
-#    - name: /home/svpace/.profile 
-#    - text: export NODE_PATH="$HOME/.local/lib/node_modules:$NODE_PATH"
+    repo: deb https://deb.nodesource.com/node_6.x {{ ansible_distribution_release }} main
+- apt: name=nodejs state=latest
+  notify:
+    - update npm completion
+- copy:
+    dest: /home/svpace/.npmrc
+    content: >
+      prefix=~/.local
+- lineinfile:
+    dest: /home/svpace/.profile 
+    line: export NODE_PATH="$HOME/.local/lib/node_modules:$NODE_PATH"

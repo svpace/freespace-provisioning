@@ -1,0 +1,20 @@
+- copy:
+    dest: "{{ my_home }}/.local/share/applications/eclipse.desktop"
+    owner: svpace
+    group: svpace
+    content: |
+      [Desktop Entry]
+      Version=1.0
+      Type=Application
+      Name=Eclipse
+      Comment=Integrated Development Environment
+      Icon=/home/svpace/.local/opt/eclipse/icon.xpm
+      Exec=/home/svpace/.local/opt/eclipse/eclipse
+      Terminal=false
+      StartupNotify=false
+      Categories=Development;IDE;
+
+- file:
+    dest: "{{ my_home }}/.local/bin/eclipse"
+    src: ../opt/eclipse/eclipse
+    state: link

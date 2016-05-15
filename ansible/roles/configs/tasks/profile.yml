@@ -1,0 +1,6 @@
+- lineinfile:
+    dest: /home/svpace/.profile 
+    line: "{{ item }}"
+  with_items:
+    - PATH="$PATH:$HOME/.local/bin"
+    - export SWT_GTK3=0

@@ -1,0 +1,12 @@
+---
+- get_url:
+    dest: /var/cache/downloads/vagrant_{{ vagrant_version }}_x86_64.deb
+    url: https://releases.hashicorp.com/vagrant/{{ vagrant_version }}/vagrant_{{ vagrant_version }}_x86_64.deb
+    checksum: "{{ vagrant_checksum }}"
+    
+- apt: deb=/var/cache/downloads/vagrant_{{ vagrant_version }}_x86_64.deb
+
+- get_url:
+    dest: /etc/bash_completion.d/vagrant
+    url: https://raw.github.com/kura/vagrant-bash-completion/master/etc/bash_completion.d/vagrant
+    checksum: "{{ vagrant_completion_checksum }}"

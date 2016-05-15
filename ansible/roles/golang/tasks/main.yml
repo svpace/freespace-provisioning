@@ -1,0 +1,26 @@
+---
+- get_url:
+    dest: /var/cache/downloads/go{{ go_version }}.linux-amd64.tar.gz
+    url: https://storage.googleapis.com/golang/go{{ go_version }}.linux-amd64.tar.gz
+    checksum: "{{ go_checksum }}"
+
+- unarchive:
+    dest: /usr/local/
+    creates: go
+    src: /var/cache/downloads/go{{ go_version }}.linux-amd64.tar.gz
+
+- copy:
+    dest: /etc/profile.d/go.sh
+    content: >
+      export PATH=$PATH:/usr/local/go/bin
+
+- file:
+    dest: /home/svpace/Workspace/golang
+    state: directory
+    
+- lineinfile:
+    dest: /home/svpace/.profile 
+    line: "{{ item }}"
+  with_items:
+    - export GOPATH="$HOME/Workspace/golang"
+    - PATH="$PATH:$HOME/Workspace/golang/bin"

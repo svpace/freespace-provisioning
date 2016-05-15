@@ -1,0 +1,8 @@
+- apt_repository:
+    repo: ppa:ansible/ansible
+- apt:
+    name: ansible
+    state: latest
+- file:
+    name: /var/cache/downloads
+    state: directory

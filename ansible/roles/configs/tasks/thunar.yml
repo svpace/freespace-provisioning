@@ -1,0 +1,4 @@
+- name: Ensure custom actions in thunar
+  template:
+    dest: "{{ my_home }}/.config/Thunar/uca.xml"
+    src: uca.xml.j2

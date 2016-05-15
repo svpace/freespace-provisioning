@@ -1,10 +1,8 @@
 - name: update npm completion
   command: npm completion
-  register: result
+  register: npm_completion
   notify: save npm completion
-
 - name: save npm completion
   copy:
-    content: result
     dest: /etc/bash_completion.d/npm
-    
+    content: "{{ npm_completion.stdout }}"

@@ -1,0 +1,38 @@
+- apt_repository:
+    repo: ppa:rodsmith/refind
+- file:
+    name: /boot/efi/EFI/refind
+    state: directory
+- copy: 
+    dest: /boot/efi/EFI/refind/banner.png
+    src: /usr/share/xfce4/backdrops/xubuntu-wallpaper.png
+- copy:
+    dest: /boot/efi/EFI/refind/shimx64.efi
+    src: shimx64.efi
+- copy:
+    dest: /boot/efi/EFI/refind/refind.conf
+    contents: >
+      timeout -1
+      banner banner.png
+      banner_scale fillscreen
+      use_graphics_for linux,windows
+      scanfor external,optical,internal,manual
+      default_selection linuz
+- apt:
+    name: refind
+    state: latest
+- apt:
+    name: "{{ item }}"
+    purge: true
+    state: absent 
+  with_items:
+    - grub
+    - grub-common
+    - grub-efi
+    - grub-efi-amd64
+    - grub-efi-amd64-bin
+    - grub-efi-amd64-signed
+    - grub-pc
+    - grub-pc-bin
+    - grub2
+    - grub2-common
