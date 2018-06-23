@@ -4,5 +4,5 @@
     update_cache: yes
 
 - apt:
-    name: python-software-properties
+    name: python-apt
     state: latest

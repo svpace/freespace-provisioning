@@ -1,0 +1,14 @@
+- apt:
+    name: squid
+    state: latest
+
+- file:
+    path: /var/spool/squid
+    owner: proxy
+    group: proxy
+    state: directory
+
+- template:
+    dest: /etc/squid/squid.conf
+    src: squid.conf.j2
+  notify: restart squid

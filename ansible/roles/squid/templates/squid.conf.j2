@@ -1,0 +1,10 @@
+http_access allow all
+http_port 3128
+maximum_object_size 4 GB
+cache_dir ufs /var/spool/squid 8192 16 256
+coredump_dir /var/spool/squid
+refresh_pattern -i .deb$ 129600 100% 129600 refresh-ims override-expire
+refresh_pattern -i .rpm$ 129600 100% 129600 refresh-ims override-expire
+refresh_pattern -i .jar$ 129600 100% 129600 refresh-ims override-expire
+refresh_pattern -i .pom$ 129600 100% 129600 refresh-ims override-expire
+refresh_pattern . 0 0% 0

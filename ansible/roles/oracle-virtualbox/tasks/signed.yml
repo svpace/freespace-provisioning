@@ -1,0 +1,10 @@
+- script: signed.sh {{ item }}
+  register: signed
+  changed_when: signed.stdout == ''
+
+- modprobe:
+    name: "{{ item }}"
+
+#- shell: /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 /etc/refind.d/keys/refind_local.key /etc/refind.d/keys/refind_local.cer $(modinfo -n {{ item }})
+#  when: signed|failed
+#  register: signing

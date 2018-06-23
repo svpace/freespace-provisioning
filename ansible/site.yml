@@ -4,11 +4,9 @@
   roles:
     - apt
     - ansible
-#    - docker
+    - docker
     - google-chrome
-    - oracle-java8
     - oracle-virtualbox
     - nodejs
     - vagrant
-#    - golang
     - configs

@@ -1,7 +1,16 @@
 - apt_key:
     url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
+
 - apt_repository:
     repo: deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib
+
 - apt:
-    name: virtualbox-5.0
+    name: virtualbox
     state: latest
+
+- include: signed.yml
+  with_items:
+    - vboxdrv
+    - vboxnetflt
+    - vboxnetadp
+    - vboxpci
